@@ -1,0 +1,27 @@
+[project]
+name = "uv-explorer"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.setuptools]
+packages = { find = { where = ["src"] } }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]
+
+[tool.unittest]
+test_dir = "tests"
+pattern = "test_*.py"
+verbosity = 2
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/explorer"]
